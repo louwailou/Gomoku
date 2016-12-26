@@ -13,6 +13,8 @@
 		A44CD8E71E0AC7C800C36CD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44CD8E51E0AC7C800C36CD2 /* Main.storyboard */; };
 		A44CD8E91E0AC7C800C36CD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A44CD8E81E0AC7C800C36CD2 /* Assets.xcassets */; };
 		A44CD8EC1E0AC7C800C36CD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44CD8EA1E0AC7C800C36CD2 /* LaunchScreen.storyboard */; };
+		A44CD8F81E0CF9FD00C36CD2 /* JFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD8F71E0CF9FC00C36CD2 /* JFModel.swift */; };
+		A44CD8FA1E0D00EC00C36CD2 /* JFBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD8F91E0D00EC00C36CD2 /* JFBoardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		A44CD8E81E0AC7C800C36CD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A44CD8EB1E0AC7C800C36CD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A44CD8ED1E0AC7C800C36CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A44CD8F51E0BD31C00C36CD2 /* JF_RX.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JF_RX.playground; sourceTree = "<group>"; };
+		A44CD8F71E0CF9FC00C36CD2 /* JFModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFModel.swift; sourceTree = "<group>"; };
+		A44CD8F91E0D00EC00C36CD2 /* JFBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBoardViewModel.swift; sourceTree = "<group>"; };
 		D66F3DBAC640FAED1C36DE4B /* Pods-Gomoku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gomoku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gomoku/Pods-Gomoku.release.xcconfig"; sourceTree = "<group>"; };
 		DD9B4B87C3C063245DCF0052 /* Pods-Gomoku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gomoku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gomoku/Pods-Gomoku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +72,9 @@
 				A44CD8E81E0AC7C800C36CD2 /* Assets.xcassets */,
 				A44CD8EA1E0AC7C800C36CD2 /* LaunchScreen.storyboard */,
 				A44CD8ED1E0AC7C800C36CD2 /* Info.plist */,
+				A44CD8F51E0BD31C00C36CD2 /* JF_RX.playground */,
+				A44CD8F71E0CF9FC00C36CD2 /* JFModel.swift */,
+				A44CD8F91E0D00EC00C36CD2 /* JFBoardViewModel.swift */,
 			);
 			path = Gomoku;
 			sourceTree = "<group>";
@@ -212,6 +220,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44CD8E41E0AC7C800C36CD2 /* ViewController.swift in Sources */,
+				A44CD8FA1E0D00EC00C36CD2 /* JFBoardViewModel.swift in Sources */,
+				A44CD8F81E0CF9FD00C36CD2 /* JFModel.swift in Sources */,
 				A44CD8E21E0AC7C800C36CD2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +390,7 @@
 				A44CD8F21E0AC7C800C36CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

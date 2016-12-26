@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
         let gbkStr = NSString(data: data as! Data, encoding: enc)!
         
         print("GBK string is: \(gbkStr)")
+        self.praticefun();
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -30,7 +32,16 @@ class ViewController: UIViewController {
         
         return (datas as NSData?, enc)
     }
-
+    func praticefun(){
+        let disposebag = DisposeBag()
+        Observable<Int>.empty().subscribe{
+            event in
+            print(event)
+        }.addDisposableTo(disposebag)
+        
+        
+        
+    }
 }
 
 
