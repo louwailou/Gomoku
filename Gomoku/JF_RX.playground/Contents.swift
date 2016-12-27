@@ -2,6 +2,7 @@
 
 import UIKit
 import RxSwift
+
 var str = "Hello, playground"
 
 let disposebag = DisposeBag()
@@ -210,4 +211,29 @@ case nil:
 func transform(_ n:Int,with f:(Int)-> Int = { $0}) -> Int{
     return f(n)
 }
+
+struct JFHelper {
+    
+    var factor:CGFloat {
+        get{
+            return 1.0 * 0.8;
+        }
+        set(newValue){
+            self.factor = newValue
+        }
+    }
+    let  screenWidth :CGFloat = UIScreen.main.bounds.size.width
+    let  ratio :CGFloat = 0.8
+    let kGridCount = 15
+    let kChessSpace = 20.0
+}
+
+let helper = JFHelper()
+print(helper.factor)
+
+
+
+
+
+
 

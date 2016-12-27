@@ -124,4 +124,10 @@ enum JFNodeRelationType :String{
     
 }
 
+class Env {
+    
+    static var iPad: Bool {
+        return UIDevice.current.userInterfaceIdiom == .pad
+    }
+}
 

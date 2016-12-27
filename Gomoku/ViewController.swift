@@ -8,16 +8,49 @@
 
 import UIKit
 import RxSwift
-
+import SnapKit
 class ViewController: UIViewController {
-
+   
+    private var tabbarVC: UITabBarController {
+        let tabVC = UITabBarController()
+        let boardNav: UINavigationController = {
+            
+            let  boardVC :UIViewController = JFBoardViewController()
+            
+            let nav :UINavigationController = UINavigationController(rootViewController: boardVC)
+            nav.tabBarItem = UITabBarItem(title: "首页", image: UIImage(named:"tab_bar_special_icon"), selectedImage: UIImage(named: "tab_bar_special_select_icon"))
+            return nav
+        }()
+        
+        let favoriteVC: UINavigationController = {
+            
+            let  boardVC :UIViewController = JFBoardViewController()
+            
+            let nav :UINavigationController = UINavigationController(rootViewController: boardVC)
+            nav.tabBarItem = UITabBarItem(title: "喜欢", image: UIImage(named:"tab_bar_recommend_icon"), selectedImage: UIImage(named: "tab_bar_recommend_select_icon"))
+            return nav
+        }()
+        
+        let profileVC: UINavigationController = {
+            
+            let  boardVC :UIViewController = JFBoardViewController()
+            
+            let nav :UINavigationController = UINavigationController(rootViewController: boardVC)
+            nav.tabBarItem = UITabBarItem(title: "设置", image: UIImage(named:"tab_bar_profile_icon"), selectedImage: UIImage(named: "tab_bar_profile_select_icon"))
+            return nav
+        }()
+        
+        tabVC.setViewControllers([boardNav,favoriteVC,profileVC], animated: true)
+        
+        return tabVC
+    }
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let (data, enc) = UTF8ToGB2312(str: "cbefbda8b7e5")
-        let gbkStr = NSString(data: data as! Data, encoding: enc)!
+      
+       self.view.addSubview(tabbarVC.view)
         
-        print("GBK string is: \(gbkStr)")
-        self.praticefun();
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -25,23 +58,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func UTF8ToGB2312(str: String) -> (NSData?, UInt) {
-        let enc = CFStringConvertEncodingToNSStringEncoding(UInt32(CFStringEncodings.GB_18030_2000.rawValue))
-        let datas = str.data(using: String.Encoding(rawValue: enc), allowLossyConversion: false)
-        
-        
-        return (datas as NSData?, enc)
-    }
-    func praticefun(){
-        let disposebag = DisposeBag()
-        Observable<Int>.empty().subscribe{
-            event in
-            print(event)
-        }.addDisposableTo(disposebag)
-        
-        
-        
-    }
+    
+   
 }
 
 

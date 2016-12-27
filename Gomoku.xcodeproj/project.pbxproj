@@ -15,6 +15,11 @@
 		A44CD8EC1E0AC7C800C36CD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44CD8EA1E0AC7C800C36CD2 /* LaunchScreen.storyboard */; };
 		A44CD8F81E0CF9FD00C36CD2 /* JFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD8F71E0CF9FC00C36CD2 /* JFModel.swift */; };
 		A44CD8FA1E0D00EC00C36CD2 /* JFBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD8F91E0D00EC00C36CD2 /* JFBoardViewModel.swift */; };
+		A44CD9091E11489300C36CD2 /* JFBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD9081E11489300C36CD2 /* JFBoardView.swift */; };
+		A44CD90D1E1148F200C36CD2 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A44CD90C1E1148F200C36CD2 /* UIView+Frame.m */; };
+		A44CD9131E12B87800C36CD2 /* JFBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD9121E12B87800C36CD2 /* JFBoardViewController.swift */; };
+		A44CD9151E12B8D300C36CD2 /* JFFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD9141E12B8D300C36CD2 /* JFFavoriteViewController.swift */; };
+		A44CD9171E12B8E600C36CD2 /* JFProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD9161E12B8E600C36CD2 /* JFProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +31,15 @@
 		A44CD8E81E0AC7C800C36CD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A44CD8EB1E0AC7C800C36CD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A44CD8ED1E0AC7C800C36CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A44CD8F51E0BD31C00C36CD2 /* JF_RX.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JF_RX.playground; sourceTree = "<group>"; };
 		A44CD8F71E0CF9FC00C36CD2 /* JFModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFModel.swift; sourceTree = "<group>"; };
 		A44CD8F91E0D00EC00C36CD2 /* JFBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBoardViewModel.swift; sourceTree = "<group>"; };
+		A44CD9081E11489300C36CD2 /* JFBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBoardView.swift; sourceTree = "<group>"; };
+		A44CD90A1E1148F100C36CD2 /* Gomoku-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gomoku-Bridging-Header.h"; sourceTree = "<group>"; };
+		A44CD90B1E1148F200C36CD2 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "../UIView+Frame.h"; sourceTree = "<group>"; };
+		A44CD90C1E1148F200C36CD2 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "../UIView+Frame.m"; sourceTree = "<group>"; };
+		A44CD9121E12B87800C36CD2 /* JFBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFBoardViewController.swift; path = ../../JFBoardViewController.swift; sourceTree = "<group>"; };
+		A44CD9141E12B8D300C36CD2 /* JFFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFFavoriteViewController.swift; path = ../../JFFavoriteViewController.swift; sourceTree = "<group>"; };
+		A44CD9161E12B8E600C36CD2 /* JFProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFProfileViewController.swift; path = ../../JFProfileViewController.swift; sourceTree = "<group>"; };
 		D66F3DBAC640FAED1C36DE4B /* Pods-Gomoku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gomoku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gomoku/Pods-Gomoku.release.xcconfig"; sourceTree = "<group>"; };
 		DD9B4B87C3C063245DCF0052 /* Pods-Gomoku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gomoku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gomoku/Pods-Gomoku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,17 +77,128 @@
 		A44CD8E01E0AC7C800C36CD2 /* Gomoku */ = {
 			isa = PBXGroup;
 			children = (
+				A44CD91C1E12B95500C36CD2 /* ViewModel */,
+				A44CD91B1E12B94300C36CD2 /* View */,
+				A44CD91A1E12B93A00C36CD2 /* Model */,
 				A44CD8E11E0AC7C800C36CD2 /* AppDelegate.swift */,
 				A44CD8E31E0AC7C800C36CD2 /* ViewController.swift */,
+				A44CD9081E11489300C36CD2 /* JFBoardView.swift */,
 				A44CD8E51E0AC7C800C36CD2 /* Main.storyboard */,
 				A44CD8E81E0AC7C800C36CD2 /* Assets.xcassets */,
 				A44CD8EA1E0AC7C800C36CD2 /* LaunchScreen.storyboard */,
 				A44CD8ED1E0AC7C800C36CD2 /* Info.plist */,
-				A44CD8F51E0BD31C00C36CD2 /* JF_RX.playground */,
 				A44CD8F71E0CF9FC00C36CD2 /* JFModel.swift */,
 				A44CD8F91E0D00EC00C36CD2 /* JFBoardViewModel.swift */,
+				A44CD90A1E1148F100C36CD2 /* Gomoku-Bridging-Header.h */,
 			);
 			path = Gomoku;
+			sourceTree = "<group>";
+		};
+		A44CD91A1E12B93A00C36CD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A44CD9211E12B9D600C36CD2 /* Board */,
+				A44CD9221E12B9D600C36CD2 /* Favorite */,
+				A44CD9231E12B9D600C36CD2 /* Profile */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A44CD91B1E12B94300C36CD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A44CD91E1E12B9C800C36CD2 /* Board */,
+				A44CD91F1E12B9C800C36CD2 /* Favorite */,
+				A44CD9201E12B9C800C36CD2 /* Profile */,
+				A44CD91D1E12B95E00C36CD2 /* Utility */,
+			);
+			name = View;
+			path = Gomoku/View;
+			sourceTree = SOURCE_ROOT;
+		};
+		A44CD91C1E12B95500C36CD2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A44CD9241E12B9E700C36CD2 /* Board */,
+				A44CD9251E12B9E700C36CD2 /* Favorite */,
+				A44CD9261E12B9E700C36CD2 /* Profile */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A44CD91D1E12B95E00C36CD2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A44CD90B1E1148F200C36CD2 /* UIView+Frame.h */,
+				A44CD90C1E1148F200C36CD2 /* UIView+Frame.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		A44CD91E1E12B9C800C36CD2 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				A44CD9121E12B87800C36CD2 /* JFBoardViewController.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		A44CD91F1E12B9C800C36CD2 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				A44CD9141E12B8D300C36CD2 /* JFFavoriteViewController.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		A44CD9201E12B9C800C36CD2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A44CD9161E12B8E600C36CD2 /* JFProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A44CD9211E12B9D600C36CD2 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		A44CD9221E12B9D600C36CD2 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		A44CD9231E12B9D600C36CD2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A44CD9241E12B9E700C36CD2 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		A44CD9251E12B9E700C36CD2 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		A44CD9261E12B9E700C36CD2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		E4DE7604BB774F6BAAC64EBC /* Pods */ = {
@@ -131,6 +253,7 @@
 				TargetAttributes = {
 					A44CD8DD1E0AC7C800C36CD2 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -219,9 +342,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A44CD9151E12B8D300C36CD2 /* JFFavoriteViewController.swift in Sources */,
+				A44CD90D1E1148F200C36CD2 /* UIView+Frame.m in Sources */,
+				A44CD9171E12B8E600C36CD2 /* JFProfileViewController.swift in Sources */,
 				A44CD8E41E0AC7C800C36CD2 /* ViewController.swift in Sources */,
 				A44CD8FA1E0D00EC00C36CD2 /* JFBoardViewModel.swift in Sources */,
+				A44CD9091E11489300C36CD2 /* JFBoardView.swift in Sources */,
 				A44CD8F81E0CF9FD00C36CD2 /* JFModel.swift in Sources */,
+				A44CD9131E12B87800C36CD2 /* JFBoardViewController.swift in Sources */,
 				A44CD8E21E0AC7C800C36CD2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,11 +474,14 @@
 			baseConfigurationReference = DD9B4B87C3C063245DCF0052 /* Pods-Gomoku.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gomoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CLib.Gomoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gomoku/Gomoku-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -361,11 +492,13 @@
 			baseConfigurationReference = D66F3DBAC640FAED1C36DE4B /* Pods-Gomoku.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gomoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CLib.Gomoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gomoku/Gomoku-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
