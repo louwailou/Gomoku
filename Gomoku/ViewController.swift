@@ -9,14 +9,18 @@
 import UIKit
 import RxSwift
 import SnapKit
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITabBarControllerDelegate {
    
-    private var tabbarVC: UITabBarController {
-        let tabVC = UITabBarController()
+    
+     var tabbarVC: UITabBarController = UITabBarController()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         let boardNav: UINavigationController = {
             
-            let  boardVC :UIViewController = JFBoardViewController()
-            
+            let  boardVC :UIViewController = JFHomeViewController()
+            boardVC.title = "首页"
             let nav :UINavigationController = UINavigationController(rootViewController: boardVC)
             nav.tabBarItem = UITabBarItem(title: "首页", image: UIImage(named:"tab_bar_special_icon"), selectedImage: UIImage(named: "tab_bar_special_select_icon"))
             return nav
@@ -24,8 +28,8 @@ class ViewController: UIViewController {
         
         let favoriteVC: UINavigationController = {
             
-            let  boardVC :UIViewController = JFBoardViewController()
-            
+            let  boardVC :UIViewController = JFFavoriteViewController()
+            boardVC.title = "我的收藏"
             let nav :UINavigationController = UINavigationController(rootViewController: boardVC)
             nav.tabBarItem = UITabBarItem(title: "喜欢", image: UIImage(named:"tab_bar_recommend_icon"), selectedImage: UIImage(named: "tab_bar_recommend_select_icon"))
             return nav
@@ -33,23 +37,18 @@ class ViewController: UIViewController {
         
         let profileVC: UINavigationController = {
             
-            let  boardVC :UIViewController = JFBoardViewController()
-            
+            let  boardVC :UIViewController = JFProfileViewController()
+            boardVC.title = "设置"
             let nav :UINavigationController = UINavigationController(rootViewController: boardVC)
             nav.tabBarItem = UITabBarItem(title: "设置", image: UIImage(named:"tab_bar_profile_icon"), selectedImage: UIImage(named: "tab_bar_profile_select_icon"))
             return nav
         }()
+        tabbarVC.addChildViewController(boardNav)
+        tabbarVC.addChildViewController(favoriteVC)
+        tabbarVC.addChildViewController(profileVC)
         
-        tabVC.setViewControllers([boardNav,favoriteVC,profileVC], animated: true)
-        
-        return tabVC
-    }
-   
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-       self.view.addSubview(tabbarVC.view)
+        tabbarVC.delegate = self
+       self.view.addSubview(self.tabbarVC.view)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -58,8 +57,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+    }
 }
 
 

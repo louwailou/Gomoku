@@ -17,6 +17,12 @@ class JFBoardViewController: UIViewController {
         
         return view
     }()
+    // 这也是一种初始化方式 这是计算属性
+    var banner:UIView  {
+        let v =  UIView()
+        v.backgroundColor = UIColor.blue
+        return v
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,8 @@ class JFBoardViewController: UIViewController {
             maker.left.right.equalToSuperview()
             maker.height.equalTo(400)
         }
+        
+        
     }
     
     

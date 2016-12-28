@@ -7,3 +7,9 @@
 //
 
 import Foundation
+class JFProfileViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blue
+    }
+}
