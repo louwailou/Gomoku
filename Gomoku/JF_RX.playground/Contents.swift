@@ -196,7 +196,7 @@ private extension MyOption {
 }
 
 
-let P:String? = nil
+var P:String? = nil
 switch P {
 case _?:
     print("___")
@@ -231,9 +231,38 @@ struct JFHelper {
 let helper = JFHelper()
 print(helper.factor)
 
+// optional 使用
 
+let px:Int? = 5
+px.map{
+    print($0)
+}
 
+func example() -> Int? {return 10}
+// 这种直接强制解包有问题，
+print(example()!*2)
+// 应该如下
+if let value = example() {
+    
+}
+let c = "abcdddd"
+let  sarr = c.components(separatedBy: "1")
+print(sarr[0])
 
+func partitionArray(arr: NSArray) -> NSArray? {
+    // Works fine, we return Optional.None
+    if arr.count % 2 != 0 {
+        return nil
+    }
+   
+    // partition
+    return [1,2,3,4,5]
+
+}
+
+if let ar1 = partitionArray(arr: ([1, 2, 3, 4])) as NSArray? {
+  print(ar1[0])
+}
 
 
 

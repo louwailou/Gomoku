@@ -32,6 +32,7 @@
 		A41E4AAB1E14129200B662A5 /* JFChessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFChessModel.swift; sourceTree = "<group>"; };
 		A41E4AAD1E1414F700B662A5 /* JFBoardSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBoardSetting.swift; sourceTree = "<group>"; };
 		A41E4AAF1E141A2C00B662A5 /* JFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeViewController.swift; sourceTree = "<group>"; };
+		A41E4AB11E14A72900B662A5 /* JF_RX.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = JF_RX.playground; path = Gomoku/JF_RX.playground; sourceTree = "<group>"; };
 		A44CD8DE1E0AC7C800C36CD2 /* Gomoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gomoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44CD8E11E0AC7C800C36CD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A44CD8E31E0AC7C800C36CD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		A44CD8D51E0AC7C800C36CD2 = {
 			isa = PBXGroup;
 			children = (
+				A41E4AB11E14A72900B662A5 /* JF_RX.playground */,
 				A44CD8E01E0AC7C800C36CD2 /* Gomoku */,
 				A44CD8DF1E0AC7C800C36CD2 /* Products */,
 				E4DE7604BB774F6BAAC64EBC /* Pods */,

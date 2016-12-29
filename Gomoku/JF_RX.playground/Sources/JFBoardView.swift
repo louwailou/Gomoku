@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
-import Snapkit
+
 
 
 class JFBoardView: UIView {
@@ -40,6 +40,10 @@ class JFBoardView: UIView {
         super.init(frame:frame)
         backgroundColor =  UIColor(red: 0.1, green: 0.1, blue: 0.9, alpha: 0.4)
         
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
