@@ -42,7 +42,7 @@
 		A44CD8ED1E0AC7C800C36CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A44CD8F71E0CF9FC00C36CD2 /* JFModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFModel.swift; sourceTree = "<group>"; };
 		A44CD8F91E0D00EC00C36CD2 /* JFBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBoardViewModel.swift; sourceTree = "<group>"; };
-		A44CD9081E11489300C36CD2 /* JFBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBoardView.swift; sourceTree = "<group>"; };
+		A44CD9081E11489300C36CD2 /* JFBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFBoardView.swift; path = ../../JFBoardView.swift; sourceTree = "<group>"; };
 		A44CD90A1E1148F100C36CD2 /* Gomoku-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gomoku-Bridging-Header.h"; sourceTree = "<group>"; };
 		A44CD90B1E1148F200C36CD2 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "../UIView+Frame.h"; sourceTree = "<group>"; };
 		A44CD90C1E1148F200C36CD2 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "../UIView+Frame.m"; sourceTree = "<group>"; };
@@ -92,7 +92,6 @@
 				A44CD91A1E12B93A00C36CD2 /* Model */,
 				A44CD8E11E0AC7C800C36CD2 /* AppDelegate.swift */,
 				A44CD8E31E0AC7C800C36CD2 /* ViewController.swift */,
-				A44CD9081E11489300C36CD2 /* JFBoardView.swift */,
 				A44CD8E51E0AC7C800C36CD2 /* Main.storyboard */,
 				A44CD8E81E0AC7C800C36CD2 /* Assets.xcassets */,
 				A44CD8EA1E0AC7C800C36CD2 /* LaunchScreen.storyboard */,
@@ -150,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				A44CD9121E12B87800C36CD2 /* JFBoardViewController.swift */,
+				A44CD9081E11489300C36CD2 /* JFBoardView.swift */,
 				A41E4AA91E14115800B662A5 /* JFChessLayer.swift */,
 				A41E4AAF1E141A2C00B662A5 /* JFHomeViewController.swift */,
 			);

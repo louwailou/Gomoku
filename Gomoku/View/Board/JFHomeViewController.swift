@@ -25,6 +25,7 @@ class  JFHomeViewController: UIViewController {
     func pushBoardVC(){
         let boardVC = JFBoardViewController()
         boardVC.hidesBottomBarWhenPushed = true
+       // self.navigationController?.present(boardVC, animated: true, completion:nil)
         self.navigationController?.pushViewController(boardVC, animated: true)
     }
 }

@@ -30,7 +30,7 @@ class JFBoardViewController: UIViewController {
         boardView.snp.makeConstraints { (maker) in
             maker.bottom.equalToSuperview()
             maker.left.right.equalToSuperview()
-            maker.height.equalTo(400)
+            maker.height.equalTo(JFBoardSettings.boardHeight)
         }
         
         

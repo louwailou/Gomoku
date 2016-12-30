@@ -18,8 +18,22 @@ class Env {
 
 struct JFBoardSettings {
     static let boardColor:UIColor = UIColor.brown
+    static let screenWidth = UIScreen.main.bounds.size.width
+    static let screenHeight = UIScreen.main.bounds.size.height
+    
+    static let chesslayoutCount = 15
+    
     static var  boardWidth : CGFloat {
-       return UIScreen.main.bounds.size.width - boardLeftMargin - boardRightMargin
+       return screenWidth - boardLeftMargin - boardRightMargin
+    }
+    
+    static var cellWidth: CGFloat {
+        return self.boardWidth / CGFloat(self.chesslayoutCount)
+    }
+    static var cellHeight = cellWidth
+    
+    static var  boardHeight : CGFloat {
+        return self.boardWidth
     }
     
     static var  boardLeftMargin : CGFloat {
@@ -44,20 +58,21 @@ struct JFBoardSettings {
             return 5.0
         }
     }
-    static var font :UIFont {
+    static  var fontSize :CGFloat  {
         if Env.iPad {
-            return UIFont.systemFont(ofSize: 14)
+            return  14.0
         }else{
-            return UIFont.systemFont(ofSize: 30)
+            return 30.0
         }
     }
+    static var font :UIFont =  UIFont.systemFont(ofSize: fontSize)
     
     static let lineColor : UIColor = UIColor.black
     static var lineHeight : CGFloat {
         if Env.iPad {
-            return 4
-        }else{
             return 2
+        }else{
+            return 1
         }
     }
     // 棋盘 标注
