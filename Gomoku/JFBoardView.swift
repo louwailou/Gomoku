@@ -15,7 +15,7 @@ class JFBoardView :UIView{
         
         setup()
     }
-    
+     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -33,28 +33,46 @@ class JFBoardView :UIView{
         // horizontal lines
         for hIndex in 0..<JFBoardSettings.chesslayoutCount  {
             context.move(to: CGPoint(x:baseX, y: baseY - cellHeight * CGFloat(hIndex)))
-            context.addLine(to: CGPoint(x: baseX+JFBoardSettings.boardWidth, y: baseY - cellHeight * CGFloat(hIndex)))
+            context.addLine(to: CGPoint(x: JFBoardSettings.boardWidth, y: baseY - cellHeight * CGFloat(hIndex)))
             let hFlag = JFBoardSettings.yAxis[hIndex]
-           let str = NSString.init(string: hFlag)
-             let stringRect = CGRect(x: baseX - 20 , y: baseY - cellHeight * CGFloat(hIndex), width: JFBoardSettings.fontSize, height: JFBoardSettings.fontSize)
-            str.draw(in: stringRect, withAttributes: nil)
+           
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = NSTextAlignment.center
+            let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
+            let attributeString = NSAttributedString(string: hFlag, attributes: attributedDictonary)
+            attributeString.draw(at: CGPoint(x: 2, y: baseY - cellHeight * CGFloat(hIndex) - 5))
         }
        
         
            // let textAttributes = [NSWritingDirectionAttributeName : NSWritingDirection.rightToLeft.rawValue]
         // vertical lines
+        
         for vIndex in 0..<JFBoardSettings.chesslayoutCount  {
             context.move(to: CGPoint(x:baseX + cellHeight * CGFloat(vIndex), y: baseY  ))
-            context.addLine(to: CGPoint(x: baseX + cellHeight * CGFloat(vIndex), y: baseY - JFBoardSettings.boardHeight ))
+            context.addLine(to: CGPoint(x: baseX + cellHeight * CGFloat(vIndex), y: JFBoardSettings.boardBottomMargin ))
             let vFlag = JFBoardSettings.xAxis[vIndex]
-            let str = NSString.init(string: vFlag)
-            let stringRect = CGRect(x: baseX + cellHeight * CGFloat(vIndex), y: baseY , width: JFBoardSettings.fontSize, height: JFBoardSettings.fontSize)
-            str.draw(in: stringRect, withAttributes: nil)
+           
+            
+           
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = NSTextAlignment.center
+            let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
+            let attributeString = NSAttributedString(string: vFlag, attributes: attributedDictonary)
+            attributeString.draw(at: CGPoint(x:  baseX + cellHeight * CGFloat(vIndex), y: baseY))
+          
         }
      
         context.strokePath()
     }
     func setup()-> Void{
+        self.backgroundColor = UIColor.brown
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
 }

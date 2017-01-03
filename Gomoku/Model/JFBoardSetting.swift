@@ -27,6 +27,15 @@ struct JFBoardSettings {
        return screenWidth - boardLeftMargin - boardRightMargin
     }
     
+//    struct CellSize {
+//        var width:CGFloat {
+//             return boardWidth / CGFloat(chesslayoutCount)
+//        }
+//        var height :CGFloat {
+//             return boardWidth / CGFloat(chesslayoutCount)
+//        }
+//    }
+    
     static var cellWidth: CGFloat {
         return self.boardWidth / CGFloat(self.chesslayoutCount)
     }
@@ -43,7 +52,14 @@ struct JFBoardSettings {
             return 20.0
         }
     }
-    
+    static var  boardTopMargin : CGFloat {
+        if Env.iPad {
+            return 40.0
+        }else{
+            return 20.0
+        }
+    }
+
     static var  boardBottomMargin : CGFloat {
         if Env.iPad {
             return 40.0
@@ -55,7 +71,7 @@ struct JFBoardSettings {
         if Env.iPad {
             return 10.0
         }else{
-            return 5.0
+            return 6.0
         }
     }
     static  var fontSize :CGFloat  {
@@ -76,7 +92,7 @@ struct JFBoardSettings {
         }
     }
     // 棋盘 标注
-    static let xAxis = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","o"]
+    static let xAxis = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"]
     static let yAxis = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     
     

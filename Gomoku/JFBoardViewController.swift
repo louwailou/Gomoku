@@ -17,6 +17,8 @@ class JFBoardViewController: UIViewController {
         
         return view
     }()
+    
+      let toolsView :UIView  = UIView()
     // 这也是一种初始化方式 这是计算属性
     var banner:UIView  {
         let v =  UIView()
@@ -26,12 +28,25 @@ class JFBoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(toolsView)
+        toolsView.snp.makeConstraints { (maker) in
+            maker.bottom.equalTo(self.view.snp.bottom)
+            maker.left.right.equalToSuperview()
+            maker.height.equalTo(45)
+        }
+        // 添加btn
+        let leftBtn = UIButton(type: .contactAdd)
+        self.toolsView.addSubview(leftBtn)
+        
+        
+        
         self.view.addSubview(boardView)
         boardView.snp.makeConstraints { (maker) in
-            maker.bottom.equalToSuperview()
+            maker.bottom.equalTo(self.toolsView.snp.top).offset(-10)
             maker.left.right.equalToSuperview()
-            maker.height.equalTo(JFBoardSettings.boardHeight)
+            maker.height.equalTo(JFBoardSettings.screenWidth)
         }
+        
         
         
     }
