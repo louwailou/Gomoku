@@ -35,10 +35,11 @@ class JFBoardView :UIView{
         
         let  minX =  JFBoardSettings.boardLeftMargin
         let  minY =   JFBoardSettings.boardTopMargin
-        let maxX =  JFBoardSettings.boardWidth 
-        let maxY = JFBoardSettings.boardHeight + JFBoardSettings.boardTopMargin
-        let cellHeight = JFBoardSettings.cellHeight //CGFloat(ceilf(Float()))
+        let maxX =  JFBoardSettings.boardWidth + JFBoardSettings.boardLeftMargin
+        let maxY = self.height - JFBoardSettings.boardBottomMargin
+        let cellHeight = JFBoardSettings.cellHeight
         
+    
        context.setStrokeColor(UIColor.red.cgColor)
         // horizontal lines
         for hIndex in 0..<JFBoardSettings.chesslayoutCount  {
@@ -68,7 +69,7 @@ class JFBoardView :UIView{
             paragraphStyle.alignment = NSTextAlignment.center
             let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
             let attributeString = NSAttributedString(string: vFlag, attributes: attributedDictonary)
-            attributeString.draw(at: CGPoint(x:  minX + cellHeight * CGFloat(vIndex), y: maxY))
+            attributeString.draw(at: CGPoint(x:  minX + cellHeight * CGFloat(vIndex) - 2, y: maxY))
           
         }
      

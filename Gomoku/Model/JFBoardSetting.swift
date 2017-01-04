@@ -28,7 +28,7 @@ struct JFBoardSettings {
     }
     
     static var cellWidth: CGFloat {
-        return self.boardWidth / CGFloat(self.chesslayoutCount)
+        return self.boardWidth / CGFloat(self.chesslayoutCount - 1)
     }
     static var cellHeight = cellWidth
     
