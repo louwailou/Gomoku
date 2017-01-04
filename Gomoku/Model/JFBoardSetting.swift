@@ -45,9 +45,9 @@ struct JFBoardSettings {
     }
     static var  boardTopMargin : CGFloat {
         if Env.iPad {
-            return 40.0
+            return 10.0
         }else{
-            return 20.0
+            return 6.0
         }
     }
 
