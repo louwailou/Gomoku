@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DE89DF988E92A3403A949A284A3A84F2F45F1F54",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DE89DF988E92A3403A949A284A3A84F2F45F1F54" : 9223372036854775807,
+    "FD4082A81DA18409F86B5AF91274C98F810261CB" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "993CA7F1-34BE-48B7-8152-86F7A82D5880",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DE89DF988E92A3403A949A284A3A84F2F45F1F54" : "Gomoku\/",
+    "FD4082A81DA18409F86B5AF91274C98F810261CB" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Gomoku",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Gomoku.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/louwailou\/Gomoku.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DE89DF988E92A3403A949A284A3A84F2F45F1F54"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/gobang.win:49480\/r\/gobangapp\/formula.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD4082A81DA18409F86B5AF91274C98F810261CB"
+    }
+  ]
+}

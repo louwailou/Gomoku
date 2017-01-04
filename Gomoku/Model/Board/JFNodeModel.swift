@@ -37,7 +37,7 @@ extension JFPoint:Equatable,Comparable{
     }
 }
 
-struct JFChessImage {
+struct JFNodeImage {
    static let white : UIImage = UIImage(named: "white")!
    static let black :UIImage = UIImage(named: "black")!
     
@@ -52,7 +52,7 @@ struct  JFSize {
 class JFNode  {
     var point:JFPoint = JFPoint(x: 0, y: 0)
     var size:JFSize = JFSize()
-    var image:JFChessImage?
+    var image:JFNodeImage?
     var comment:String? = nil
     var subNodes:Array<JFNode> = NSArray() as! Array<JFNode>
     var parent:JFNode? = nil

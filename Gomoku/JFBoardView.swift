@@ -80,9 +80,9 @@ class JFBoardView :UIView{
     func nodeLayer(isWhite:Bool)-> CAShapeLayer{
         let node = CAShapeLayer()
         if isWhite {
-           node.contents = UIImage(named: "")
+           node.contents = JFNodeImage.white
         }else{
-           node.contents = UIImage(named: "")
+           node.contents = JFNodeImage.black
         }
         return node
     }
