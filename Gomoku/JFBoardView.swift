@@ -13,7 +13,6 @@ class JFBoardView :UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setup()
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesutre))
         self.addGestureRecognizer(tap)
     }
@@ -24,37 +23,40 @@ class JFBoardView :UIView{
     
     override func draw(_ rect: CGRect) {
      super.draw(rect)
+        
+        
         let context:CGContext = UIGraphicsGetCurrentContext()!
         let color = UIColor.black
         context.setStrokeColor(color.cgColor)
         context.setLineWidth(JFBoardSettings.lineHeight)
         
         let  minX =  JFBoardSettings.boardLeftMargin
-        let cellHeight = CGFloat(ceilf(Float(JFBoardSettings.cellHeight)))
-        let baseY = self.height - JFBoardSettings.boardBottomMargin
-        let boardWidth = JFBoardSettings.boardWidth
-       
+        let  minY =   JFBoardSettings.boardTopMargin
+        let maxX =  JFBoardSettings.boardWidth 
+        let maxY = JFBoardSettings.boardHeight + JFBoardSettings.boardTopMargin
+        let cellHeight = JFBoardSettings.cellHeight //CGFloat(ceilf(Float()))
+        
+       context.setStrokeColor(UIColor.red.cgColor)
         // horizontal lines
         for hIndex in 0..<JFBoardSettings.chesslayoutCount  {
-            context.move(to: CGPoint(x:minX, y: baseY - cellHeight * CGFloat(hIndex)))
-            context.addLine(to: CGPoint(x:boardWidth , y: baseY - cellHeight * CGFloat(hIndex)))
+            context.move(to: CGPoint(x:minX, y: maxY - cellHeight * CGFloat(hIndex)))
+            context.addLine(to: CGPoint(x:maxX , y: maxY - cellHeight * CGFloat(hIndex)))
             let hFlag = JFBoardSettings.yAxis[hIndex]
            
+            print( maxY - cellHeight * CGFloat(hIndex))
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = NSTextAlignment.right
             let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
             let attributeString = NSAttributedString(string: hFlag, attributes: attributedDictonary)
-            attributeString.draw(at: CGPoint(x: 2, y: baseY - cellHeight * CGFloat(hIndex) - 5))
+            attributeString.draw(at: CGPoint(x: 2, y: maxY - cellHeight * CGFloat(hIndex) - 5))
         }
        
-        
-           // let textAttributes = [NSWritingDirectionAttributeName : NSWritingDirection.rightToLeft.rawValue]
         // vertical lines
-        
+        context.setStrokeColor(color.cgColor)
         for vIndex in 0..<JFBoardSettings.chesslayoutCount  {
-            context.move(to: CGPoint(x:minX + cellHeight * CGFloat(vIndex), y: baseY  ))
-            context.addLine(to: CGPoint(x: minX + cellHeight * CGFloat(vIndex), y: JFBoardSettings.boardBottomMargin ))
+            context.move(to: CGPoint(x:minX + cellHeight * CGFloat(vIndex), y: maxY  ))
+            context.addLine(to: CGPoint(x: minX + cellHeight * CGFloat(vIndex), y: minY ))
             let vFlag = JFBoardSettings.xAxis[vIndex]
            
             
@@ -63,13 +65,13 @@ class JFBoardView :UIView{
             paragraphStyle.alignment = NSTextAlignment.center
             let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
             let attributeString = NSAttributedString(string: vFlag, attributes: attributedDictonary)
-            attributeString.draw(at: CGPoint(x:  minX + cellHeight * CGFloat(vIndex), y: baseY))
+            attributeString.draw(at: CGPoint(x:  minX + cellHeight * CGFloat(vIndex), y: maxY))
           
         }
      
         context.strokePath()
         
-    
+      
     }
     //点击事件
     func tapGesutre(_ gesture:UITapGestureRecognizer){
@@ -90,8 +92,6 @@ class JFBoardView :UIView{
         return node
     }
     
-    func setup()-> Void{
-        self.backgroundColor = UIColor.brown
-    }
+   
 
 }

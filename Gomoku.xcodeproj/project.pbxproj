@@ -25,6 +25,7 @@
 		A44CD9151E12B8D300C36CD2 /* JFFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD9141E12B8D300C36CD2 /* JFFavoriteViewController.swift */; };
 		A44CD9171E12B8E600C36CD2 /* JFProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CD9161E12B8E600C36CD2 /* JFProfileViewController.swift */; };
 		A456C7711E1C871F00F8B820 /* JFParseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456C7701E1C871F00F8B820 /* JFParseTool.swift */; };
+		A456C77E1E1CC83800F8B820 /* JFContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456C77D1E1CC83800F8B820 /* JFContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		A44CD9141E12B8D300C36CD2 /* JFFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFFavoriteViewController.swift; path = ../../JFFavoriteViewController.swift; sourceTree = "<group>"; };
 		A44CD9161E12B8E600C36CD2 /* JFProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFProfileViewController.swift; path = ../../JFProfileViewController.swift; sourceTree = "<group>"; };
 		A456C7701E1C871F00F8B820 /* JFParseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFParseTool.swift; path = ../View/JFParseTool.swift; sourceTree = "<group>"; };
+		A456C77D1E1CC83800F8B820 /* JFContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContainerView.swift; sourceTree = "<group>"; };
 		D66F3DBAC640FAED1C36DE4B /* Pods-Gomoku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gomoku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gomoku/Pods-Gomoku.release.xcconfig"; sourceTree = "<group>"; };
 		DD9B4B87C3C063245DCF0052 /* Pods-Gomoku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gomoku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gomoku/Pods-Gomoku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				A44CD9081E11489300C36CD2 /* JFBoardView.swift */,
 				A41E4AA91E14115800B662A5 /* JFChessLayer.swift */,
 				A41E4AAF1E141A2C00B662A5 /* JFHomeViewController.swift */,
+				A456C77D1E1CC83800F8B820 /* JFContainerView.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44CD9151E12B8D300C36CD2 /* JFFavoriteViewController.swift in Sources */,
+				A456C77E1E1CC83800F8B820 /* JFContainerView.swift in Sources */,
 				A44CD90D1E1148F200C36CD2 /* UIView+Frame.m in Sources */,
 				A44CD9171E12B8E600C36CD2 /* JFProfileViewController.swift in Sources */,
 				A41E4AAC1E14129200B662A5 /* JFNodeModel.swift in Sources */,

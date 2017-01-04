@@ -11,21 +11,13 @@ import Foundation
 
 class JFBoardViewController: UIViewController {
     
-    private lazy var  boardView: JFBoardView = {
-        let view = JFBoardView()
-        
-        
+    private lazy var  boardView: JFContainerView = {
+        let view = JFContainerView()
         return view
     }()
     
       let toolsView :UIView  = UIView()
-    // 这也是一种初始化方式 这是计算属性
-    var banner:UIView  {
-        let v =  UIView()
-        v.backgroundColor = UIColor.blue
-        return v
-    }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(toolsView)
