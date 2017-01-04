@@ -8,15 +8,15 @@
 
 import Foundation
 class JFContainerView: UIView {
-    var bgView :UIImageView  = UIImageView(image: UIImage(named: "board"))
+   // var bgView :UIImageView  = UIImageView(image: UIImage(named: "board"))
     
     override init(frame:CGRect) {
         super.init(frame:frame)
         
-        self.addSubview(bgView)
-        bgView.snp.makeConstraints { (maker) in
-            maker.edges.equalToSuperview()
-        }
+//        self.addSubview(bgView)
+//        bgView.snp.makeConstraints { (maker) in
+//            maker.edges.equalToSuperview()
+//        }
         // 添加board view
        let board = JFBoardView()
         self.addSubview(board)

@@ -30,6 +30,9 @@ class JFBoardView :UIView{
         context.setStrokeColor(color.cgColor)
         context.setLineWidth(JFBoardSettings.lineHeight)
         
+        let bg = UIImage(named: "board")
+        bg?.draw(in: self.bounds)
+        
         let  minX =  JFBoardSettings.boardLeftMargin
         let  minY =   JFBoardSettings.boardTopMargin
         let maxX =  JFBoardSettings.boardWidth 
