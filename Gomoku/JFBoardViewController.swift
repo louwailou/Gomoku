@@ -35,8 +35,9 @@ class JFBoardViewController: UIViewController {
             maker.height.equalTo(45)
         }
         // 添加btn
-        let leftBtn = UIButton(type: .contactAdd)
+        let leftBtn = UIButton(type:.custom)
         self.toolsView.addSubview(leftBtn)
+        leftBtn.setTitle("落子", for: .normal)
         
         
         
@@ -46,7 +47,7 @@ class JFBoardViewController: UIViewController {
             maker.left.right.equalToSuperview()
             maker.height.equalTo(JFBoardSettings.screenWidth)
         }
-        
+        print(JFBoardSettings.screenWidth)
         
         
     }

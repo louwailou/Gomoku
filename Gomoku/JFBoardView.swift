@@ -29,18 +29,20 @@ class JFBoardView :UIView{
         context.setStrokeColor(color.cgColor)
         context.setLineWidth(JFBoardSettings.lineHeight)
         
-        let  baseX =  JFBoardSettings.boardLeftMargin
-        let cellHeight = JFBoardSettings.cellHeight
+        let  minX =  JFBoardSettings.boardLeftMargin
+        let cellHeight = CGFloat(ceilf(Float(JFBoardSettings.cellHeight)))
         let baseY = self.height - JFBoardSettings.boardBottomMargin
+        let boardWidth = JFBoardSettings.boardWidth
+       
         // horizontal lines
         for hIndex in 0..<JFBoardSettings.chesslayoutCount  {
-            context.move(to: CGPoint(x:baseX, y: baseY - cellHeight * CGFloat(hIndex)))
-            context.addLine(to: CGPoint(x: JFBoardSettings.boardWidth, y: baseY - cellHeight * CGFloat(hIndex)))
+            context.move(to: CGPoint(x:minX, y: baseY - cellHeight * CGFloat(hIndex)))
+            context.addLine(to: CGPoint(x:boardWidth , y: baseY - cellHeight * CGFloat(hIndex)))
             let hFlag = JFBoardSettings.yAxis[hIndex]
            
             
             let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = NSTextAlignment.center
+            paragraphStyle.alignment = NSTextAlignment.right
             let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
             let attributeString = NSAttributedString(string: hFlag, attributes: attributedDictonary)
             attributeString.draw(at: CGPoint(x: 2, y: baseY - cellHeight * CGFloat(hIndex) - 5))
@@ -51,8 +53,8 @@ class JFBoardView :UIView{
         // vertical lines
         
         for vIndex in 0..<JFBoardSettings.chesslayoutCount  {
-            context.move(to: CGPoint(x:baseX + cellHeight * CGFloat(vIndex), y: baseY  ))
-            context.addLine(to: CGPoint(x: baseX + cellHeight * CGFloat(vIndex), y: JFBoardSettings.boardBottomMargin ))
+            context.move(to: CGPoint(x:minX + cellHeight * CGFloat(vIndex), y: baseY  ))
+            context.addLine(to: CGPoint(x: minX + cellHeight * CGFloat(vIndex), y: JFBoardSettings.boardBottomMargin ))
             let vFlag = JFBoardSettings.xAxis[vIndex]
            
             
@@ -61,7 +63,7 @@ class JFBoardView :UIView{
             paragraphStyle.alignment = NSTextAlignment.center
             let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
             let attributeString = NSAttributedString(string: vFlag, attributes: attributedDictonary)
-            attributeString.draw(at: CGPoint(x:  baseX + cellHeight * CGFloat(vIndex), y: baseY))
+            attributeString.draw(at: CGPoint(x:  minX + cellHeight * CGFloat(vIndex), y: baseY))
           
         }
      
@@ -74,6 +76,7 @@ class JFBoardView :UIView{
         let point = gesture.location(in: gesture.view)
         // 计算行列位置
         print("x = \(point.x)")
+        
         
     }
     // 获取棋子

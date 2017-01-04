@@ -24,10 +24,13 @@ import Foundation
  */
 class JFBoardManager: NSObject {
     var paths:Array<String> = Array()
+    var layers :Array<CAShapeLayer> = Array()
     
-    
+    class var shareInstance :JFBoardManager {
+        struct Static {
+            static let instance = JFBoardManager()
+        }
+        return Static.instance
+    }
 }
 
-class JFParse: NSObject {
-    
-}
