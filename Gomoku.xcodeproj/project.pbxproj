@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		412E0BA427CAB7BBBDF268D8 /* Pods_Gomoku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BA62F3E7B9C849E6E17F60 /* Pods_Gomoku.framework */; };
 		A41E4AAA1E14115800B662A5 /* JFChessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E4AA91E14115800B662A5 /* JFChessLayer.swift */; };
-		A41E4AAC1E14129200B662A5 /* JFChessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E4AAB1E14129200B662A5 /* JFChessModel.swift */; };
+		A41E4AAC1E14129200B662A5 /* JFNodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E4AAB1E14129200B662A5 /* JFNodeModel.swift */; };
 		A41E4AAE1E1414F700B662A5 /* JFBoardSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E4AAD1E1414F700B662A5 /* JFBoardSetting.swift */; };
 		A41E4AB01E141A2C00B662A5 /* JFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E4AAF1E141A2C00B662A5 /* JFHomeViewController.swift */; };
 		A41E4AC01E16631E00B662A5 /* JFBoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E4ABF1E16631E00B662A5 /* JFBoardManager.swift */; };
@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		09BA62F3E7B9C849E6E17F60 /* Pods_Gomoku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gomoku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41E4AA91E14115800B662A5 /* JFChessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFChessLayer.swift; sourceTree = "<group>"; };
-		A41E4AAB1E14129200B662A5 /* JFChessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFChessModel.swift; sourceTree = "<group>"; };
+		A41E4AAB1E14129200B662A5 /* JFNodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFNodeModel.swift; sourceTree = "<group>"; };
 		A41E4AAD1E1414F700B662A5 /* JFBoardSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBoardSetting.swift; sourceTree = "<group>"; };
 		A41E4AAF1E141A2C00B662A5 /* JFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeViewController.swift; sourceTree = "<group>"; };
 		A41E4AB11E14A72900B662A5 /* JF_RX.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = JF_RX.playground; path = Gomoku/JF_RX.playground; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		A44CD9211E12B9D600C36CD2 /* Board */ = {
 			isa = PBXGroup;
 			children = (
-				A41E4AAB1E14129200B662A5 /* JFChessModel.swift */,
+				A41E4AAB1E14129200B662A5 /* JFNodeModel.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -370,7 +370,7 @@
 				A44CD9151E12B8D300C36CD2 /* JFFavoriteViewController.swift in Sources */,
 				A44CD90D1E1148F200C36CD2 /* UIView+Frame.m in Sources */,
 				A44CD9171E12B8E600C36CD2 /* JFProfileViewController.swift in Sources */,
-				A41E4AAC1E14129200B662A5 /* JFChessModel.swift in Sources */,
+				A41E4AAC1E14129200B662A5 /* JFNodeModel.swift in Sources */,
 				A44CD8E41E0AC7C800C36CD2 /* ViewController.swift in Sources */,
 				A41E4AAE1E1414F700B662A5 /* JFBoardSetting.swift in Sources */,
 				A44CD9091E11489300C36CD2 /* JFBoardView.swift in Sources */,
