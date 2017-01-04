@@ -8,60 +8,10 @@
 
 import Foundation
 
-struct JFPoint {
-    var x: Float
-    var y: Float
-    
-}
-
-extension JFPoint:CustomStringConvertible{
-    var description:String{
-        return "(x:\(self.x) y:\(self.y))"
-    }
-}
-
-extension JFPoint:Equatable,Comparable{
-    static func == (lp:JFPoint,rp:JFPoint)->Bool{
-        let equalx = lp.x == rp.x
-        let equaly = lp.y == rp.y
-        return equalx&&equaly
-        
-    }
-    public static func <(lhs: JFPoint, rhs: JFPoint) -> Bool{
-        return lhs.x < rhs.x && lhs.y < rhs.y;
-    }
-    
-    /// Returns a Boolean value indicating whether the value of the first
-    /// argument is less than or equal to that of the second argument.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-   // public static func <=(lhs: Self, rhs: Self) -> Bool
-    
-    /// Returns a Boolean value indicating whether the value of the first
-    /// argument is greater than or equal to that of the second argument.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-   // public static func >=(lhs: Self, rhs: Self) -> Bool
-    
-   
-    public static func >(lhs: JFPoint, rhs: JFPoint) -> Bool{
-         return lhs.x > rhs.x && lhs.y >  rhs.y;
-    }
-}
 
 // 节点
 
-class JFNode  {
-    var point:JFPoint = JFPoint(x: 0, y: 0)
-    var comment:String? = nil
-    var subNodes:Array<JFNode> = NSArray() as! Array<JFNode>
-    var parent:JFNode? = nil
-    
-}
+
 
 // 装饰模式
 protocol Product{
@@ -77,7 +27,7 @@ protocol Salteable:Product {
 extension Salteable{
     func salted()->Self {
         var newProduct = self
-        newProduct.name = "加盐\(name)"
+        newProduct.name = "\(name)"
         newProduct.price = price + 1
         return newProduct
     }
@@ -96,7 +46,7 @@ struct Snack: CustomStringConvertible {
     
     var description: String {
         get {
-            return "\(name): \(price)元"
+            return "\(name): \(price)"
         }
     }
 }

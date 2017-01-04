@@ -8,14 +8,54 @@
 
 import Foundation
 
+struct JFPoint {
+    var x: Float = 0.0
+    var y: Float = 0.0
+    
+}
+
+extension JFPoint:CustomStringConvertible{
+    var description:String{
+        return "(x:\(self.x) y:\(self.y))"
+    }
+}
+
+extension JFPoint:Equatable,Comparable{
+    static func == (lp:JFPoint,rp:JFPoint)->Bool{
+        let equalx = lp.x == rp.x
+        let equaly = lp.y == rp.y
+        return equalx&&equaly
+        
+    }
+    public static func <(lhs: JFPoint, rhs: JFPoint) -> Bool{
+        return lhs.x < rhs.x && lhs.y < rhs.y;
+    }
+   
+    
+    public static func >(lhs: JFPoint, rhs: JFPoint) -> Bool{
+        return lhs.x > rhs.x && lhs.y >  rhs.y;
+    }
+}
+
 struct JFChessImage {
    static let white : UIImage = UIImage(named: "white")!
    static let black :UIImage = UIImage(named: "black")!
     
 }
 
-struct  JFChessSize {
-    static var size:CGSize {
-        return CGSize(width: 100.0, height: 100.0)
-    }
+struct  JFSize {
+    var width = JFBoardSettings.cellWidth
+    var height = JFBoardSettings.cellHeight
+    
+}
+
+class JFNode  {
+    var point:JFPoint = JFPoint(x: 0, y: 0)
+    var size:JFSize = JFSize()
+    var image:JFChessImage?
+    var comment:String? = nil
+    var subNodes:Array<JFNode> = NSArray() as! Array<JFNode>
+    var parent:JFNode? = nil
+    var isWhite = false
+    
 }

@@ -13,7 +13,7 @@ class JFBoardViewController: UIViewController {
     
     private lazy var  boardView: JFBoardView = {
         let view = JFBoardView()
-        view.backgroundColor = UIColor.brown
+        
         
         return view
     }()

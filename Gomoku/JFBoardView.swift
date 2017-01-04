@@ -14,8 +14,10 @@ class JFBoardView :UIView{
         super.init(frame: frame)
         
         setup()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesutre))
+        self.addGestureRecognizer(tap)
     }
-     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -64,15 +66,29 @@ class JFBoardView :UIView{
         }
      
         context.strokePath()
+        
+    
     }
+    //点击事件
+    func tapGesutre(_ gesture:UITapGestureRecognizer){
+        let point = gesture.location(in: gesture.view)
+        // 计算行列位置
+        print("x = \(point.x)")
+        
+    }
+    // 获取棋子
+    func nodeLayer(isWhite:Bool)-> CAShapeLayer{
+        let node = CAShapeLayer()
+        if isWhite {
+           node.contents = UIImage(named: "")
+        }else{
+           node.contents = UIImage(named: "")
+        }
+        return node
+    }
+    
     func setup()-> Void{
         self.backgroundColor = UIColor.brown
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
-   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
+
 }
