@@ -35,20 +35,20 @@ class JFBoardView :UIView{
         
         let  minX =  JFBoardSettings.boardLeftMargin
         let  minY =   JFBoardSettings.boardTopMargin
-        let maxX =  JFBoardSettings.boardWidth + JFBoardSettings.boardLeftMargin
-        let maxY = self.height - JFBoardSettings.boardBottomMargin
+        let maxX =  JFBoardSettings.boardWidth + minX
+        let maxY =  minY + JFBoardSettings.boardHeight
         let cellHeight = JFBoardSettings.cellHeight
         
     
        context.setStrokeColor(UIColor.red.cgColor)
         // horizontal lines
         for hIndex in 0..<JFBoardSettings.chesslayoutCount  {
-            context.move(to: CGPoint(x:minX, y: maxY - cellHeight * CGFloat(hIndex)))
-            context.addLine(to: CGPoint(x:maxX , y: maxY - cellHeight * CGFloat(hIndex)))
+            let baseY = maxY - cellHeight * CGFloat(hIndex)
+            context.move(to: CGPoint(x:minX, y:baseY ))
+            context.addLine(to: CGPoint(x:maxX , y: baseY))
             let hFlag = JFBoardSettings.yAxis[hIndex]
            
-            print( maxY - cellHeight * CGFloat(hIndex))
-            
+           
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = NSTextAlignment.right
             let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
@@ -58,9 +58,11 @@ class JFBoardView :UIView{
        
         // vertical lines
         context.setStrokeColor(color.cgColor)
+        
         for vIndex in 0..<JFBoardSettings.chesslayoutCount  {
-            context.move(to: CGPoint(x:minX + cellHeight * CGFloat(vIndex), y: maxY  ))
-            context.addLine(to: CGPoint(x: minX + cellHeight * CGFloat(vIndex), y: minY ))
+            let baseX = minX + cellHeight * CGFloat(vIndex)
+            context.move(to: CGPoint(x:baseX, y: maxY  ))
+            context.addLine(to: CGPoint(x: baseX, y: minY ))
             let vFlag = JFBoardSettings.xAxis[vIndex]
            
             
