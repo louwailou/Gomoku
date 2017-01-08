@@ -1,4 +1,4 @@
-//
+                                                                        //
 //  JFBoardView.swift
 //  Gomoku
 //
@@ -32,28 +32,17 @@ class JFBoardView :UIView{
         
         let bg = UIImage(named: "board")
         bg?.draw(in: self.bounds)
-        
-        let  minX =  JFBoardSettings.boardLeftMargin
-        let  minY =   JFBoardSettings.boardTopMargin
-        let maxX =  JFBoardSettings.boardWidth + minX
-        let maxY =  minY + JFBoardSettings.boardHeight
         let cellHeight = JFBoardSettings.cellHeight
+        let  minX :CGFloat =  cellHeight
+        let  minY:CGFloat =  cellHeight
+        let maxX :CGFloat =  self.width - minX
+        let maxY :CGFloat =  self.height - minY
         
-    
-       context.setStrokeColor(UIColor.red.cgColor)
         // horizontal lines
         for hIndex in 0..<JFBoardSettings.chesslayoutCount  {
             let baseY = maxY - cellHeight * CGFloat(hIndex)
             context.move(to: CGPoint(x:minX, y:baseY ))
             context.addLine(to: CGPoint(x:maxX , y: baseY))
-            let hFlag = JFBoardSettings.yAxis[hIndex]
-           
-           
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = NSTextAlignment.right
-            let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
-            let attributeString = NSAttributedString(string: hFlag, attributes: attributedDictonary)
-            attributeString.draw(at: CGPoint(x: 2, y: maxY - cellHeight * CGFloat(hIndex) - 5))
         }
        
         // vertical lines
@@ -63,16 +52,6 @@ class JFBoardView :UIView{
             let baseX = minX + cellHeight * CGFloat(vIndex)
             context.move(to: CGPoint(x:baseX, y: maxY  ))
             context.addLine(to: CGPoint(x: baseX, y: minY ))
-            let vFlag = JFBoardSettings.xAxis[vIndex]
-           
-            
-           
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = NSTextAlignment.center
-            let attributedDictonary = [NSForegroundColorAttributeName:UIColor.black, NSParagraphStyleAttributeName:paragraphStyle] as [String : Any]
-            let attributeString = NSAttributedString(string: vFlag, attributes: attributedDictonary)
-            attributeString.draw(at: CGPoint(x:  minX + cellHeight * CGFloat(vIndex) - 2, y: maxY))
-          
         }
      
         context.strokePath()

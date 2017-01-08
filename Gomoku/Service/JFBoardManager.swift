@@ -25,7 +25,11 @@ import Foundation
 class JFBoardManager: NSObject {
     var paths:Array<String> = Array()
     var layers :Array<CAShapeLayer> = Array()
-    
+    // 保证单例的唯一性
+    private override init() {
+        super.init()
+        
+    }
     class var shareInstance :JFBoardManager {
         struct Static {
             static let instance = JFBoardManager()

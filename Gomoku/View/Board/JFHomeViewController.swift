@@ -16,7 +16,6 @@ class  JFHomeViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
             make.size.equalTo(CGSize(width: 60, height: 40))
-            
         }
         actionBtn.backgroundColor = UIColor.blue
         actionBtn.setTitle("定式", for: .normal)

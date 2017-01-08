@@ -24,54 +24,36 @@ struct JFBoardSettings {
     static let chesslayoutCount = 15
     
     static var  boardWidth : CGFloat {
-       return screenWidth - boardLeftMargin - boardRightMargin
+       return screenWidth - boardLeftMargin 
     }
     
     static var cellWidth: CGFloat {
-        return self.boardWidth / CGFloat(self.chesslayoutCount - 1)
+        return self.boardWidth / CGFloat(self.chesslayoutCount + 1)
     }
     static var cellHeight = cellWidth
     
     static var  boardHeight : CGFloat {
         return self.boardWidth
     }
-    
-    static var  boardLeftMargin : CGFloat {
-        if Env.iPad {
-            return 40.0
-        }else{
-            return 20.0
-        }
-    }
-    static var  boardTopMargin : CGFloat {
-        if Env.iPad {
-            return 10.0
-        }else{
-            return 6.0
-        }
-    }
-
-    static var  boardBottomMargin : CGFloat {
-        if Env.iPad {
-            return 40.0
-        }else{
-            return 20.0
-        }
-    }
-    static var  boardRightMargin : CGFloat {
-        if Env.iPad {
-            return 10.0
-        }else{
-            return 6.0
-        }
-    }
     static  var fontSize :CGFloat  {
         if Env.iPad {
-            return  14.0
+            return  20.0
         }else{
-            return 30.0
+            return 10.0
         }
     }
+    static let  boardLeftMargin :CGFloat = {
+        return fontSize + 5
+    }()
+    static let   boardTopMargin = cellWidth
+    static var   boardBottomMargin: CGFloat  {
+        return fontSize + 5
+    }
+    static let  boardRightMargin : CGFloat = {
+        return fontSize + 5
+    }()
+    
+    
     static var font :UIFont =  UIFont.systemFont(ofSize: fontSize)
     
     static let lineColor : UIColor = UIColor.black

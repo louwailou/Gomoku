@@ -1,5 +1,5 @@
 //
-//  JFBoardViewController.swift
+//  JFcontainerViewController.swift
 //  Gomoku
 //
 //  Created by Sun on 2016/12/27.
@@ -11,7 +11,7 @@ import Foundation
 
 class JFBoardViewController: UIViewController {
     
-    private lazy var  boardView: JFContainerView = {
+    private lazy var  containerView: JFContainerView = {
         let view = JFContainerView()
         return view
     }()
@@ -21,6 +21,7 @@ class JFBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(toolsView)
+        toolsView.backgroundColor = UIColor.lightGray
         toolsView.snp.makeConstraints { (maker) in
             maker.bottom.equalTo(self.view.snp.bottom)
             maker.left.right.equalToSuperview()
@@ -29,17 +30,39 @@ class JFBoardViewController: UIViewController {
         // 添加btn
         let leftBtn = UIButton(type:.custom)
         self.toolsView.addSubview(leftBtn)
-        leftBtn.setTitle("落子", for: .normal)
+        leftBtn.setTitle("上一步", for: .normal)
+        leftBtn.snp.makeConstraints { (maker) in
+            maker.centerY.equalToSuperview()
+            maker.left.equalToSuperview().offset(10)
+            maker.height.equalTo(40)
+        }
         
         
+        let nextBtn = UIButton(type:.custom)
+        self.toolsView.addSubview(nextBtn)
+        nextBtn.setTitle("下一步", for: .normal)
+        nextBtn.snp.makeConstraints { (maker) in
+            maker.centerY.equalToSuperview()
+            maker.left.equalTo(leftBtn.snp.right).offset(10)
+            maker.height.equalTo(40)
+        }
         
-        self.view.addSubview(boardView)
-        boardView.snp.makeConstraints { (maker) in
-            maker.bottom.equalTo(self.toolsView.snp.top).offset(-10)
+        let cancelBtn = UIButton(type:.custom)
+        self.toolsView.addSubview(cancelBtn)
+        cancelBtn.setTitle("取消", for: .normal)
+        cancelBtn.snp.makeConstraints { (maker) in
+            maker.centerY.equalToSuperview()
+            maker.left.equalTo(nextBtn.snp.right).offset(10)
+            maker.height.equalTo(40)
+        }
+        
+        self.view.addSubview(containerView)
+        containerView.snp.makeConstraints { (maker) in
+            maker.bottom.equalTo(self.toolsView.snp.top)
             maker.left.right.equalToSuperview()
             maker.height.equalTo(JFBoardSettings.screenWidth)
         }
-        print(JFBoardSettings.screenWidth)
+        
         
         
     }
