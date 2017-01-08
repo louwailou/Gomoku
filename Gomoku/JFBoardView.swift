@@ -46,18 +46,37 @@ class JFBoardView :UIView{
         }
        
         // vertical lines
-        context.setStrokeColor(color.cgColor)
         
         for vIndex in 0..<JFBoardSettings.chesslayoutCount  {
             let baseX = minX + cellHeight * CGFloat(vIndex)
             context.move(to: CGPoint(x:baseX, y: maxY  ))
             context.addLine(to: CGPoint(x: baseX, y: minY ))
         }
-     
+        
         context.strokePath()
+        
+        // d4 d12  L4  L12  h8
+        let pointWidth = JFBoardSettings.pointCenter
+        
+        context.setFillColor(color.cgColor)
+        
+        context.addEllipse(in: CGRect(x: CGFloat(4) * cellHeight - pointWidth/2, y: maxY - CGFloat(3) * cellHeight - pointWidth/2, width: pointWidth, height: pointWidth))
+        
+        // d12
+         context.addEllipse(in: CGRect(x: CGFloat(4) * cellHeight - pointWidth/2, y: maxY - CGFloat(11) * cellHeight - pointWidth/2, width: pointWidth, height: pointWidth))
+        
+        // L4  L12
+         context.addEllipse(in: CGRect(x: CGFloat(12) * cellHeight - pointWidth/2, y: maxY - CGFloat(3) * cellHeight - pointWidth/2, width: pointWidth, height: pointWidth))
+        
+         context.addEllipse(in: CGRect(x: CGFloat(12) * cellHeight - pointWidth/2, y: maxY - CGFloat(11) * cellHeight - pointWidth/2, width: pointWidth, height: pointWidth))
+        
+        // H8
+         context.addEllipse(in: CGRect(x: CGFloat(8) * cellHeight - pointWidth/2, y: maxY - CGFloat(7) * cellHeight - pointWidth/2, width: pointWidth, height: pointWidth))
+        context.fillPath()
         
       
     }
+    
     //点击事件
     func tapGesutre(_ gesture:UITapGestureRecognizer){
         let point = gesture.location(in: gesture.view)

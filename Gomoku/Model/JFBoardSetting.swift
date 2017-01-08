@@ -22,7 +22,13 @@ struct JFBoardSettings {
     static let screenHeight = UIScreen.main.bounds.size.height
     
     static let chesslayoutCount = 15
-    
+    static var pointCenter :CGFloat = {
+        if Env.iPad {
+            return  12.0
+        }else{
+            return 6.0
+        }
+    }()
     static var  boardWidth : CGFloat {
        return screenWidth - boardLeftMargin 
     }
