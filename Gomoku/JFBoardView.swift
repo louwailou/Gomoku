@@ -90,13 +90,17 @@ class JFBoardView :UIView{
     func tapGesutre(_ gesture:UITapGestureRecognizer){
         let point = gesture.location(in: gesture.view)
         // 计算行列位置
+        let layer = self.nodeLayer(isWhite: true)
+        layer.frame = CGRect(x: point.x, y: point.y, width: cellHeight/2, height: cellHeight/2)
         print("x = \(point.x)")
-        
+        self.layer.addSublayer(layer)
+        // 计算距离触摸点最近的坐标 ，并转换为node 进行记录
         
     }
     // 获取棋子
     func nodeLayer(isWhite:Bool)-> CAShapeLayer{
         let node = CAShapeLayer()
+        
         if isWhite {
            node.contents = JFNodeImage.white
         }else{
