@@ -90,10 +90,12 @@ class JFBoardView :UIView{
     func tapGesutre(_ gesture:UITapGestureRecognizer){
         let point = gesture.location(in: gesture.view)
         // 计算行列位置
-        let layer = self.nodeLayer(isWhite: true)
-        layer.frame = CGRect(x: point.x, y: point.y, width: cellHeight/2, height: cellHeight/2)
+        let layer = self.nodeLayer(isWhite: false)
+        layer.frame = CGRect(x: point.x, y: point.y, width: cellHeight, height: cellHeight)
         print("x = \(point.x)")
-        self.layer.addSublayer(layer)
+        let img =  UIImageView(image: JFNodeImage.white)
+        img.frame = CGRect(x: point.x, y: point.y, width: cellHeight, height: cellHeight)
+        self.addSubview(img)
         // 计算距离触摸点最近的坐标 ，并转换为node 进行记录
         
     }
