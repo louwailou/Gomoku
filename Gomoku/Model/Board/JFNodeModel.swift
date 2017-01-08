@@ -38,8 +38,8 @@ extension JFPoint:Equatable,Comparable{
 }
 
 struct JFNodeImage {
-   static let white : UIImage = UIImage(named: "white")!
-   static let black :UIImage = UIImage(named: "black")!
+   static let white : UIImage? = UIImage(named: "white")
+   static let black :UIImage? = UIImage(named: "black")
     
 }
 

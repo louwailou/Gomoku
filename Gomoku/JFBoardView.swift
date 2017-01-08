@@ -93,20 +93,45 @@ class JFBoardView :UIView{
         let layer = self.nodeLayer(isWhite: false)
         layer.frame = CGRect(x: point.x, y: point.y, width: cellHeight, height: cellHeight)
         print("x = \(point.x)")
-        let img =  UIImageView(image: JFNodeImage.white)
-        img.frame = CGRect(x: point.x, y: point.y, width: cellHeight, height: cellHeight)
-        self.addSubview(img)
+//        let img =  UIImageView(image: JFNodeImage.white)
+//        img.frame = CGRect(x: point.x, y: point.y, width: cellHeight, height: cellHeight)
+//        self.addSubview(img)
         // 计算距离触摸点最近的坐标 ，并转换为node 进行记录
-        
+        self.layer.addSublayer(layer)
     }
     // 获取棋子
     func nodeLayer(isWhite:Bool)-> CAShapeLayer{
+        /*
+        // 添加文字
+         let textLayer = CATextLayer()
+         textLayer.frame = someView.bounds
+         
+         // 2
+         var string = "12"
+        
+         
+         textLayer.string = string
+         
+         // 3
+         let fontName: CFStringRef = "Noteworthy-Light"
+         textLayer.font = CTFontCreateWithName(fontName, fontSize, nil)
+         
+         // 4
+         textLayer.foregroundColor = UIColor.darkGrayColor().CGColor
+         textLayer.wrapped = true
+         textLayer.alignmentMode = kCAAlignmentLeft
+         textLayer.contentsScale = UIScreen.mainScreen().scale
+         node.addSublayer(textLayer)
+         */
+        
+        
+        
         let node = CAShapeLayer()
         
         if isWhite {
-           node.contents = JFNodeImage.white
+           node.contents = JFNodeImage.white?.cgImage
         }else{
-           node.contents = JFNodeImage.black
+           node.contents = JFNodeImage.black?.cgImage
         }
         return node
     }
