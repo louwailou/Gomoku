@@ -9,6 +9,19 @@
 import Foundation
 import UIKit
 class JFBoardView :UIView{
+    let cellHeight = JFBoardSettings.cellHeight
+    var  minX :CGFloat  {
+       return cellHeight
+    }
+    var  minY:CGFloat {
+        return cellHeight
+    }
+    var  maxX :CGFloat {
+        return self.width - minX
+    }
+    var  maxY :CGFloat {
+      return self.height - minY
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,11 +45,7 @@ class JFBoardView :UIView{
         
         let bg = UIImage(named: "board")
         bg?.draw(in: self.bounds)
-        let cellHeight = JFBoardSettings.cellHeight
-        let  minX :CGFloat =  cellHeight
-        let  minY:CGFloat =  cellHeight
-        let maxX :CGFloat =  self.width - minX
-        let maxY :CGFloat =  self.height - minY
+        
         
         // horizontal lines
         for hIndex in 0..<JFBoardSettings.chesslayoutCount  {
