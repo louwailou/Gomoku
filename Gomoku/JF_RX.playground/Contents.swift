@@ -264,5 +264,15 @@ if let ar1 = partitionArray(arr: ([1, 2, 3, 4])) as NSArray? {
   print(ar1[0])
 }
 
+func UTF8ToGB2312(str: String) -> (NSData?, UInt) {
+    let enc = CFStringConvertEncodingToNSStringEncoding(UInt32(CFStringEncodings.GB_18030_2000.rawValue))
+    
+    let data = str.data(using:String.Encoding.utf8)
+    
+    return (data as NSData?, enc)
+}
+ let data = "08d7eebaf3d2bbd2b6b1eabcc7".data(using:String.Encoding.utf8)
+print(data!)
 
+let st:NSString = "最后一叶标记"
 
