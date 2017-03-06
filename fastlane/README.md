@@ -27,7 +27,7 @@ Deploy a new version to the App Store
 ```
 fastlane ios certificates
 ```
-
+readonly 不能创建证书，只能读取
 
 ----
 

@@ -2,7 +2,7 @@ git_url "http://192.168.45.120/sunjianfeng/certificates.git"
 
 type "development" # The default type, can be: appstore, adhoc or development
 
- app_identifier "com.wallet.sun"
+ app_identifier "com.sun.fastlane"
  username "sun_224@sina.com" # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`
