@@ -52,9 +52,9 @@ platform :ios do
     # frameit
   end
 
-
+desc "readonly 不能创建证书，只能读取"
 lane :certificates do
-  match(app_identifier: ["com.wallet.sun", "com.krausefx.app2", "com.krausefx.app3"], readonly: true,
+  match(app_identifier: ["com.wallet.sun", "com.krausefx.app2", "com.krausefx.app3"], readonly: false,
   git_url:"http://192.168.45.120/sunjianfeng/certificates.git",
   type:"development")
 end
