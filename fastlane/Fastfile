@@ -54,7 +54,7 @@ platform :ios do
 
 desc "readonly 不能创建证书，只能读取"
 lane :certificates do
-  match(app_identifier: ["com.9fbank.9fWallet"], readonly: true,
+  match(app_identifier: ["com.9fbank.9fWallet"], readonly: false,
   git_url:"http://192.168.45.120/sunjianfeng/certificates.git",
   type:"development")
 end
