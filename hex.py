@@ -1,4 +1,4 @@
-# encoding=utf8
+#encoding=utf8
 import sys
 
 reload(sys)
@@ -45,7 +45,7 @@ allFlags = onlySon + hasSonAndRbrother + onlyRBrother + lastNode
 
 
 def decodeGBK(hexStr):
-    
+
     cm = hexStr.replace(' ', '').decode("hex").decode("GBK") #
     print("hex =%s> %s" %(hexStr,cm))
     return cm
@@ -54,10 +54,10 @@ def decodeGBK(hexStr):
 def writeToFile(node,comment= "",text = ""):
     if len(text) > 1:
         text = decodeGBK(text)
-    
+
     if len(comment) > 1:
         comment = decodeGBK(comment)
-    
+
     wFile.write(node+":"+comment+":"+text)
     wFile.write("\n")
 
@@ -66,7 +66,7 @@ def parseonlySon(list):
     flag = list[1]
     if flag in allFlags:
         if flag in ["00", "80", "c0", "40"]:  # 无其他信息
-            
+
             print('无其他信息node =  %s' % node)
             writeToFile(node)
             return list[2:]  # 返回一个新的list
@@ -90,17 +90,17 @@ def parseonlySon(list):
                 return newList[textEndIndex + 2:]
             else:
                 return newList[textEndIndex + 1:]
-    
+
         elif flag in ["10", "90", "d0", "50"]:
             # 只有标记
             writeToFile(node)
             print("只有标记 node = %s 标记 = %s" % (node, flag))
             return list[2:]
-elif flag in ["18", "98", "d8", "58"]:  # 有标记和注释
-    endIndex = list.index("00")
-        comList = list[3:endIndex]
-            comStr = "".join(comList)
-            writeToFile(node,comStr,"")
+        elif flag in ["18", "98", "d8", "58"]:  # 有标记和注释
+               endIndex = list.index("00")
+             comList = list[3:endIndex]
+             comStr = "".join(comList)
+               writeToFile(node,comStr,"")
             print("既有标记又有注释 node = %s 注释 = %s" % (node, decodeGBK(comStr)))
             return list[endIndex + 1:]
         elif flag in ["09", "89", "c9", "49"]:  # 有注释和棋盘文字
@@ -109,7 +109,7 @@ elif flag in ["18", "98", "d8", "58"]:  # 有标记和注释
             comList = newList[:comEndIndex]
             comStr = "".join(comList)
             newList = newList[comEndIndex + 1:]
-            
+
             textEndIndex = newList.index("00")
             text = "".join(newList[:textEndIndex])
             writeToFile(node,comStr,text)
@@ -166,7 +166,7 @@ wFile.close()
     elif nextNode in hasSonAndRbrother:
     # 有儿子和右兄弟
     print("有儿子和右兄弟")
-    
+
     elif ((nextNode in lastNode) or (nextNode in onlyRBrother)):
     print("这是一个分支的最后叶子节点 %s 节点后一个flag %s" % (item, nextNode))
     elif nextNode in onlyRBrother:
