@@ -9,6 +9,7 @@ target 'Gomoku' do
     pod 'SnapKit',     '~> 3.0.2'
     pod 'RxSwift',    '~> 3.0'
     pod 'RxCocoa',    '~> 3.0'
+    pod 'GodEye'
 
 end
 

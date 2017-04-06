@@ -9,6 +9,9 @@
 import UIKit
 import RxSwift
 import SnapKit
+import CrashEye
+import Log4G
+
 class ViewController: UIViewController,UITabBarControllerDelegate {
    
     
@@ -52,7 +55,16 @@ class ViewController: UIViewController,UITabBarControllerDelegate {
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Log4G.log("just log")
+        
+        DispatchQueue.global().async {
+            Log4G.warning("just warning")
+        }
+        
+        Log4G.error("just error")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
